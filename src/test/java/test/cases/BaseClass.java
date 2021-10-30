@@ -3,6 +3,7 @@ package test.cases;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+
+import page.objects.EditCustomerPage;
 import utilities.ReadConfig;
 
 import java.io.File;
@@ -33,6 +36,8 @@ public class BaseClass {
 
 	public static WebDriver driver;
 
+	EditCustomerPage ecp;
+	
 	public static Logger logger;
 
 	@Parameters("browser")
@@ -79,4 +84,16 @@ public class BaseClass {
 		FileUtils.copyFile(source, target);
 		System.out.println("Screenshot taken");
 	}
+	
+	public boolean isAlertPresent()
+    {
+        try{
+            driver.switchTo().alert();
+            return true;
+        }catch (NoAlertPresentException ne)
+        {
+            return false;
+        }
+
+    }
 }

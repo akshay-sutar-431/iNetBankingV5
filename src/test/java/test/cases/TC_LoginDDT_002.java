@@ -59,15 +59,5 @@ public class TC_LoginDDT_002 extends BaseClass{
         return loginData;
     }
 
-    public boolean isAlertPresent()
-    {
-        try{
-            driver.switchTo().alert();
-            return true;
-        }catch (NoAlertPresentException ne)
-        {
-            return  false;
-        }
-
-    }
+    
 }
