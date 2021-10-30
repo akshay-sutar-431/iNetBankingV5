@@ -8,48 +8,44 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-WebDriver ldriver;
-	
-	public LoginPage(WebDriver rdriver) {
-		// TODO Auto-generated constructor stub
-		
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
-	}
-	
-	@FindBy(name="uid")
-	@CacheLookup
-	WebElement txtUserName;
-	
-	@FindBy(name="password")
-	@CacheLookup
-	WebElement txtPassword;
-	
-	@FindBy(name="btnLogin")
-	@CacheLookup
-	WebElement loginButton;
+    WebDriver ldriver;
 
-	@FindBy(xpath = "//a[contains(text(),'Log out')]")
-	@CacheLookup
-	WebElement logout;
-	
-	public void setUserName(String user)
-	{
-		txtUserName.sendKeys(user);
-	}
-	
-	public void setPassword(String password)
-	{
-		txtPassword.sendKeys(password);
-	}
-	
-	public void clickSubmit()
-	{
-		loginButton.click();
-	}
+    public LoginPage(WebDriver rdriver) {
+        // TODO Auto-generated constructor stub
 
-	public void clickLogout()
-	{
-		logout.click();
-	}
+        ldriver = rdriver;
+        PageFactory.initElements(rdriver, this);
+    }
+
+    @FindBy(name = "uid")
+    @CacheLookup
+    WebElement txtUserName;
+
+    @FindBy(name = "password")
+    @CacheLookup
+    WebElement txtPassword;
+
+    @FindBy(name = "btnLogin")
+    @CacheLookup
+    WebElement loginButton;
+
+    @FindBy(xpath = "//a[contains(text(),'Log out')]")
+    @CacheLookup
+    WebElement logout;
+
+    public void setUserName(String user) {
+        txtUserName.sendKeys(user);
+    }
+
+    public void setPassword(String password) {
+        txtPassword.sendKeys(password);
+    }
+
+    public void clickSubmit() {
+        loginButton.click();
+    }
+
+    public void clickLogout() {
+        logout.click();
+    }
 }

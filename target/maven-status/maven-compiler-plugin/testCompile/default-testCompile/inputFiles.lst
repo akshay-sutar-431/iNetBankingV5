@@ -1,8 +1,10 @@
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\page\objects\LoginPage.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\test\cases\TC_LoginTest_001.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\utilities\XLUtils.java
+C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\page\objects\EditCustomerPage.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\page\objects\AddCustomerPage.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\utilities\ReadConfig.java
+C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\test\cases\TC_EditCustomerTest_004.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\test\cases\TC_LoginDDT_002.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\test\cases\BaseClass.java
 C:\Users\aksha\eclipse-workspace\iNetBankingV5\src\test\java\test\cases\TC_AddCustomerTest_003.java

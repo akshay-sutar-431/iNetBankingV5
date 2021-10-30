@@ -8,7 +8,7 @@ import page.objects.LoginPage;
 
 import java.io.IOException;
 
-public class TC_AddCustomerTest_003 extends BaseClass{
+public class TC_AddCustomerTest_003 extends BaseClass {
 
     @Test
     public void addNewCustomer() throws InterruptedException, IOException {
@@ -34,13 +34,13 @@ public class TC_AddCustomerTest_003 extends BaseClass{
         Thread.sleep(1000);
         acp.setCity("Solapur");
         Thread.sleep(1000);
-        acp.setDOBDate("10","01","1999");
+        acp.setDOBDate("10", "01", "1999");
         Thread.sleep(1000);
         acp.setState("Maharashtra");
         Thread.sleep(1000);
         acp.setPin("413208");
         Thread.sleep(1000);
-        String email = randomString()+"@gmail.com";
+        String email = randomString() + "@gmail.com";
 
         acp.setEmail(email);
         Thread.sleep(1000);
@@ -51,29 +51,23 @@ public class TC_AddCustomerTest_003 extends BaseClass{
         acp.clickOnSubmit();
         Thread.sleep(1000);
 
-        boolean res=driver.getPageSource().contains("Customer Registered Successfully");
+        boolean res = driver.getPageSource().contains("Customer Registered Successfully");
 
-        if(res==true)
-        {
+        if (res) {
             Assert.assertTrue(true);
             logger.info("validating customer is added");
-        }
-        else
-        {
-            captureScreenshot(driver,"addNewCustomer");
+        } else {
+            captureScreenshot(driver, "addNewCustomer");
             logger.info("validating customer is Not added");
-            Assert.assertTrue(false);
+            Assert.fail();
         }
     }
 
-    public String randomString()
-    {
-        String st=RandomStringUtils.randomAlphabetic(6);
-        return st;
+    public String randomString() {
+        return RandomStringUtils.randomAlphabetic(6);
     }
-    public String randomStringNum()
-    {
-        String st=RandomStringUtils.randomAlphanumeric(10);
-        return st;
+
+    public String randomStringNum() {
+        return RandomStringUtils.randomAlphanumeric(10);
     }
 }

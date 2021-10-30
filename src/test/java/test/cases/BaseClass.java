@@ -25,73 +25,64 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
-	ReadConfig rc = new ReadConfig();
+    ReadConfig rc = new ReadConfig();
 
-	public String baseUrl = rc.getApplicationURL();
-	public String userName = rc.getUserName();
-	public String password = rc.getPassword();
-	public String chromepath = rc.getChromePath();
-	public String iepath = rc.getIEPath();
-	public String firefoxpath = rc.getFirefoxPath();
+    public String baseUrl = rc.getApplicationURL();
+    public String userName = rc.getUserName();
+    public String password = rc.getPassword();
+    public String chromepath = rc.getChromePath();
+    public String iepath = rc.getIEPath();
+    public String firefoxpath = rc.getFirefoxPath();
 
-	public static WebDriver driver;
+    public static WebDriver driver;
 
-	EditCustomerPage ecp;
-	
-	public static Logger logger;
+    EditCustomerPage ecp;
 
-	@Parameters("browser")
-	@BeforeClass
-	public void setup(String br)
-	{
-		if(br.equals("chrome"))
-		{
-			System.setProperty("webdriver.chrome.driver", chromepath);
-			driver= new ChromeDriver();
-		}
+    public static Logger logger;
 
-		else if(br.equals("firefox"))
-		{
-			System.setProperty("webdriver.gecko.driver", firefoxpath);
-			driver= new FirefoxDriver();
-		}
+    @Parameters("browser")
+    @BeforeClass
+    public void setup(String br) {
+        if (br.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", chromepath);
+            driver = new ChromeDriver();
+        } else if (br.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", firefoxpath);
+            driver = new FirefoxDriver();
+        }
 
-		if(br.equals("ie"))
-		{
-			System.setProperty("webdriver.ie.driver", iepath);
-			driver= new InternetExplorerDriver();
-		}
+        if (br.equals("ie")) {
+            System.setProperty("webdriver.ie.driver", iepath);
+            driver = new InternetExplorerDriver();
+        }
 
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get(baseUrl);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get(baseUrl);
 
-		//logger.info("url is opened");
+        //logger.info("url is opened");
 
-		logger = Logger.getLogger("ebanking");
-		PropertyConfigurator.configure("log4j.properties");
-	}
-	
-	@AfterClass
-	public void tearDown()
-	{
-		driver.quit();
-	}
+        logger = Logger.getLogger("ebanking");
+        PropertyConfigurator.configure("log4j.properties");
+    }
 
-	public void captureScreenshot(WebDriver driver, String tname) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
-		File target = new File(System.getProperty("user.dir")+"/Screenshots/"+tname+".png");
-		FileUtils.copyFile(source, target);
-		System.out.println("Screenshot taken");
-	}
-	
-	public boolean isAlertPresent()
-    {
-        try{
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
+
+    public void captureScreenshot(WebDriver driver, String tname) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File target = new File(System.getProperty("user.dir") + "/Screenshots/" + tname + ".png");
+        FileUtils.copyFile(source, target);
+        System.out.println("Screenshot taken");
+    }
+
+    public boolean isAlertPresent() {
+        try {
             driver.switchTo().alert();
             return true;
-        }catch (NoAlertPresentException ne)
-        {
+        } catch (NoAlertPresentException ne) {
             return false;
         }
 

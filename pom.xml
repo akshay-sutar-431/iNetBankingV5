@@ -15,13 +15,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   <!--     <maven.compiler.source>1.7</maven.compiler.source> -->
-     <!--   <maven.compiler.target>1.7</maven.compiler.target>  -->
+        <!--     <maven.compiler.source>1.7</maven.compiler.source> -->
+        <!--   <maven.compiler.target>1.7</maven.compiler.target>  -->
     </properties>
 
     <!-- Plug-ins required for executing Tests  -->
-	<build>
-		<plugins>
+    <build>
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -31,24 +31,24 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-				<configuration>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
 
-					<suiteXmlFiles>
-						<!-- TestNG suite XML files -->
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
-		
-		</plugins>
-	
-	</build>
+                    <suiteXmlFiles>
+                        <!-- TestNG suite XML files -->
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
 
-<!-- Dependencies required for Project -->
+        </plugins>
+
+    </build>
+
+    <!-- Dependencies required for Project -->
 
     <dependencies>
         <dependency>
