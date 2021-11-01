@@ -30,7 +30,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     @Test
     public void editCustomerWithId() throws IOException, InterruptedException {
 
-        ecp.setCustomerId("86990");
+        ecp.setCustomerId("341");
 
         ecp.clickOnSubmitButton1();
 
@@ -38,18 +38,20 @@ public class TC_EditCustomerTest_004 extends BaseClass {
             Alert alert = driver.switchTo().alert(); // switch to alert window
             String text = alert.getText();
 
-            if (text.equalsIgnoreCase("Customer does not exist!!")) {
+            if (text.contains("Customer does not exist")) {
                 logger.warn("Customer ID not found");
                 alert.accept();
-                Assert.fail();
                 driver.switchTo().defaultContent(); // focus on main window
+                Assert.fail();
+
             }
             else if (text.equalsIgnoreCase("You are not authorize to edit this customer!!")) {
                 logger.warn("Customer ID found but Authorization Required");
                 alert.accept();
                 captureScreenshot(driver, "editCustomer");
-                Assert.assertTrue(true);
                 driver.switchTo().defaultContent(); // focus on main window
+                Assert.assertTrue(true);
+
             }
             else {
                 logger.warn("Customer ID Not found ");
@@ -95,7 +97,8 @@ public class TC_EditCustomerTest_004 extends BaseClass {
 			}
 			*/
 
-            if (ecp.validateUpdatedDetails().contains("Customer details updated Successfully!!!")) {
+            String vText = ecp.validateUpdatedDetails();
+            if (vText.contains("Customer details updated Successfully")) {
                 logger.info("customer details updated");
                 Assert.assertTrue(true);
             } else {
@@ -107,7 +110,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     }
 
     @Test
-    public void editCustomerWithoutEnteringCId() {
+    public void editCustomerWithoutId() {
 
         ecp.clickOnSubmitButton2();
 
@@ -132,5 +135,10 @@ public class TC_EditCustomerTest_004 extends BaseClass {
         driver.switchTo().defaultContent(); // focus on main window
     }
 
+    @Test
+    public void validateHomeNavigation()
+    {
+        ecp.clickOnHome();
+    }
 
 }

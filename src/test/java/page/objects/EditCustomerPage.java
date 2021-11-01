@@ -106,6 +106,10 @@ public class EditCustomerPage {
         address.sendKeys(address1);
     }
 
+    public String textValidation()
+    {
+        return updateTextValidate.getText();
+    }
     public void setCity(String city1) {
         city.clear();
         city.sendKeys(city1);

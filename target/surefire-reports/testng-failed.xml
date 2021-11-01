@@ -7,6 +7,14 @@
   <test thread-count="5" name="iNetBankingV5(failed)" verbose="0">
     <parameter name="browser" value="chrome"/>
     <classes>
+      <class name="test.cases.TC_DeleteCustomerTest_005">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="deleteCustomerId"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- test.cases.TC_DeleteCustomerTest_005 -->
       <class name="test.cases.TC_EditCustomerTest_004">
         <methods>
           <include name="setup"/>

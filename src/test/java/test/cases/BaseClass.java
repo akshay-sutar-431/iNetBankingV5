@@ -33,6 +33,7 @@ public class BaseClass {
     public String chromepath = rc.getChromePath();
     public String iepath = rc.getIEPath();
     public String firefoxpath = rc.getFirefoxPath();
+    public String cid ;
 
     public static WebDriver driver;
 

@@ -13,13 +13,13 @@
                     <include name="loginTest"/>
                 </methods>
             </class>
-        <!--
-            <class name="test.cases.TC_LoginDDT_002">
-                <methods>
-                    <include name="loginData"/>
-                </methods>
-            </class>
-        -->
+            <!--
+                <class name="test.cases.TC_LoginDDT_002">
+                    <methods>
+                        <include name="loginData"/>
+                    </methods>
+                </class>
+            -->
             <class name="test.cases.TC_AddCustomerTest_003">
                 <methods>
                     <include name="addNewCustomer"/>
@@ -29,10 +29,11 @@
             <class name="test.cases.TC_EditCustomerTest_004">
                 <methods>
                     <include name="editCustomerWithId"/>
-              <!--      <include name="editCustomerWithoutEnteringCId"/>    -->
+                    <!--      <include name="editCustomerWithoutId"/>    -->
+                    <include name="validateHomeNavigation"/>
                 </methods>
             </class>
-
+            <class name="test.cases.TC_DeleteCustomerTest_005"/>
 
         </classes>
     </test>

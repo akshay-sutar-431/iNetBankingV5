@@ -589,3 +589,198 @@
 2021-10-30 21:36:42,085 - ebanking -INFO - New Pin Set
 2021-10-30 21:36:48,013 - ebanking -INFO - Clicked on Submit
 2021-10-30 21:36:48,077 - ebanking -INFO - customer details updated
+2021-11-01 12:58:52,179 - ebanking -INFO - url is opened
+2021-11-01 12:58:52,545 - ebanking -INFO - username entered
+2021-11-01 12:58:52,672 - ebanking -INFO - password entered
+2021-11-01 12:58:54,434 - ebanking -INFO - clicked on login button
+2021-11-01 12:58:54,449 - ebanking -INFO - home page validated
+2021-11-01 12:59:01,090 - ebanking -INFO - Username and password Provided
+2021-11-01 12:59:02,526 - ebanking -INFO - User has logged
+2021-11-01 12:59:05,378 - ebanking -INFO - Providing Customer Details
+2021-11-01 12:59:55,286 - ebanking -INFO - Customer is Failed to Added
+2021-11-01 13:00:02,866 - ebanking -INFO - Username and password Provided
+2021-11-01 13:00:04,361 - ebanking -INFO - User has logged
+2021-11-01 13:00:07,290 - ebanking -WARN - Customer ID not found
+2021-11-01 13:00:14,427 - ebanking -INFO - Username and password Provided
+2021-11-01 13:00:15,885 - ebanking -INFO - User has logged
+2021-11-01 13:04:42,660 - ebanking -INFO - url is opened
+2021-11-01 13:04:42,807 - ebanking -INFO - username entered
+2021-11-01 13:04:42,936 - ebanking -INFO - password entered
+2021-11-01 13:04:44,485 - ebanking -INFO - clicked on login button
+2021-11-01 13:04:44,498 - ebanking -INFO - home page validated
+2021-11-01 13:04:50,092 - ebanking -INFO - Username and password Provided
+2021-11-01 13:04:51,530 - ebanking -INFO - User has logged
+2021-11-01 13:04:54,457 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:05:10,158 - ebanking -INFO - Customer Id 2571 is Added Successfully
+2021-11-01 13:05:16,319 - ebanking -INFO - Username and password Provided
+2021-11-01 13:05:17,766 - ebanking -INFO - User has logged
+2021-11-01 13:05:20,879 - ebanking -WARN - Customer ID not found
+2021-11-01 13:05:27,873 - ebanking -INFO - Username and password Provided
+2021-11-01 13:05:29,261 - ebanking -INFO - User has logged
+2021-11-01 13:09:20,380 - ebanking -INFO - url is opened
+2021-11-01 13:09:20,605 - ebanking -INFO - username entered
+2021-11-01 13:09:20,745 - ebanking -INFO - password entered
+2021-11-01 13:09:22,207 - ebanking -INFO - clicked on login button
+2021-11-01 13:09:22,223 - ebanking -INFO - home page validated
+2021-11-01 13:09:28,337 - ebanking -INFO - Username and password Provided
+2021-11-01 13:09:29,687 - ebanking -INFO - User has logged
+2021-11-01 13:09:32,589 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:09:47,558 - ebanking -INFO - Customer Id 82898 is Added Successfully
+2021-11-01 13:09:54,401 - ebanking -INFO - Username and password Provided
+2021-11-01 13:09:55,815 - ebanking -INFO - User has logged
+2021-11-01 13:09:58,632 - ebanking -WARN - Customer ID not found
+2021-11-01 13:10:05,837 - ebanking -INFO - Username and password Provided
+2021-11-01 13:10:07,325 - ebanking -INFO - User has logged
+2021-11-01 13:16:09,448 - ebanking -INFO - url is opened
+2021-11-01 13:16:09,651 - ebanking -INFO - username entered
+2021-11-01 13:16:09,770 - ebanking -INFO - password entered
+2021-11-01 13:16:11,348 - ebanking -INFO - clicked on login button
+2021-11-01 13:16:11,359 - ebanking -INFO - home page validated
+2021-11-01 13:16:17,801 - ebanking -INFO - Username and password Provided
+2021-11-01 13:16:19,317 - ebanking -INFO - User has logged
+2021-11-01 13:16:22,277 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:17:12,357 - ebanking -INFO - Customer is Failed to Added
+2021-11-01 13:17:20,232 - ebanking -INFO - Username and password Provided
+2021-11-01 13:17:21,899 - ebanking -INFO - User has logged
+2021-11-01 13:17:25,066 - ebanking -WARN - Customer ID found 
+2021-11-01 13:17:26,224 - ebanking -INFO - New Address Set
+2021-11-01 13:17:26,403 - ebanking -INFO - New City Set
+2021-11-01 13:17:27,595 - ebanking -INFO - New Pin Set
+2021-11-01 13:17:34,134 - ebanking -INFO - Clicked on Submit
+2021-11-01 13:17:34,189 - ebanking -INFO - customer details updated
+2021-11-01 13:17:41,216 - ebanking -INFO - Username and password Provided
+2021-11-01 13:17:42,539 - ebanking -INFO - User has logged
+2021-11-01 13:24:33,353 - ebanking -INFO - url is opened
+2021-11-01 13:24:33,548 - ebanking -INFO - username entered
+2021-11-01 13:24:33,675 - ebanking -INFO - password entered
+2021-11-01 13:24:35,805 - ebanking -INFO - clicked on login button
+2021-11-01 13:24:35,818 - ebanking -INFO - home page validated
+2021-11-01 13:24:42,170 - ebanking -INFO - Username and password Provided
+2021-11-01 13:24:44,365 - ebanking -INFO - User has logged
+2021-11-01 13:24:47,247 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:25:33,831 - ebanking -INFO - Customer is Failed to Added
+2021-11-01 13:25:39,854 - ebanking -INFO - Username and password Provided
+2021-11-01 13:25:41,284 - ebanking -INFO - User has logged
+2021-11-01 13:25:44,519 - ebanking -WARN - Customer ID found 
+2021-11-01 13:25:45,693 - ebanking -INFO - New Address Set
+2021-11-01 13:25:45,877 - ebanking -INFO - New City Set
+2021-11-01 13:25:47,054 - ebanking -INFO - New Pin Set
+2021-11-01 13:25:52,674 - ebanking -INFO - Clicked on Submit
+2021-11-01 13:26:00,402 - ebanking -INFO - Username and password Provided
+2021-11-01 13:26:01,811 - ebanking -INFO - User has logged
+2021-11-01 13:32:44,528 - ebanking -INFO - url is opened
+2021-11-01 13:32:44,723 - ebanking -INFO - username entered
+2021-11-01 13:32:44,846 - ebanking -INFO - password entered
+2021-11-01 13:32:46,395 - ebanking -INFO - clicked on login button
+2021-11-01 13:32:46,407 - ebanking -INFO - home page validated
+2021-11-01 13:32:52,280 - ebanking -INFO - Username and password Provided
+2021-11-01 13:32:53,774 - ebanking -INFO - User has logged
+2021-11-01 13:32:57,169 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:33:46,372 - ebanking -INFO - Customer is Failed to Added
+2021-11-01 13:33:52,544 - ebanking -INFO - Username and password Provided
+2021-11-01 13:33:53,939 - ebanking -INFO - User has logged
+2021-11-01 13:33:57,375 - ebanking -WARN - Customer ID found 
+2021-11-01 13:33:58,532 - ebanking -INFO - New Address Set
+2021-11-01 13:33:58,704 - ebanking -INFO - New City Set
+2021-11-01 13:33:59,949 - ebanking -INFO - New Pin Set
+2021-11-01 13:34:05,283 - ebanking -INFO - Clicked on Submit
+2021-11-01 13:34:12,719 - ebanking -INFO - Username and password Provided
+2021-11-01 13:34:14,090 - ebanking -INFO - User has logged
+2021-11-01 13:34:18,384 - ebanking -INFO - Customer Id Provided
+2021-11-01 13:48:09,958 - ebanking -INFO - url is opened
+2021-11-01 13:48:10,164 - ebanking -INFO - username entered
+2021-11-01 13:48:10,284 - ebanking -INFO - password entered
+2021-11-01 13:48:11,833 - ebanking -INFO - clicked on login button
+2021-11-01 13:48:11,845 - ebanking -INFO - home page validated
+2021-11-01 13:48:17,401 - ebanking -INFO - Username and password Provided
+2021-11-01 13:48:18,733 - ebanking -INFO - User has logged
+2021-11-01 13:48:21,470 - ebanking -INFO - Providing Customer Details
+2021-11-01 13:48:37,804 - ebanking -INFO - Customer Id 58285 is Added Successfully
+2021-11-01 13:48:43,687 - ebanking -INFO - Username and password Provided
+2021-11-01 13:48:45,101 - ebanking -INFO - User has logged
+2021-11-01 13:48:47,932 - ebanking -WARN - Customer ID not found
+2021-11-01 13:48:54,652 - ebanking -INFO - Username and password Provided
+2021-11-01 13:48:56,051 - ebanking -INFO - User has logged
+2021-11-01 13:49:00,309 - ebanking -INFO - Customer Id Provided
+2021-11-01 14:02:28,994 - ebanking -INFO - url is opened
+2021-11-01 14:02:29,195 - ebanking -INFO - username entered
+2021-11-01 14:02:29,322 - ebanking -INFO - password entered
+2021-11-01 14:02:30,846 - ebanking -INFO - clicked on login button
+2021-11-01 14:02:30,858 - ebanking -INFO - home page validated
+2021-11-01 14:02:36,279 - ebanking -INFO - Username and password Provided
+2021-11-01 14:02:38,182 - ebanking -INFO - User has logged
+2021-11-01 14:02:40,946 - ebanking -INFO - Providing Customer Details
+2021-11-01 14:03:30,340 - ebanking -INFO - Customer is Failed to Added
+2021-11-01 14:03:37,450 - ebanking -INFO - Username and password Provided
+2021-11-01 14:03:38,801 - ebanking -INFO - User has logged
+2021-11-01 14:03:42,489 - ebanking -WARN - Customer ID found 
+2021-11-01 14:03:43,673 - ebanking -INFO - New Address Set
+2021-11-01 14:03:43,847 - ebanking -INFO - New City Set
+2021-11-01 14:03:45,046 - ebanking -INFO - New Pin Set
+2021-11-01 14:03:50,908 - ebanking -INFO - Clicked on Submit
+2021-11-01 14:03:50,964 - ebanking -INFO - customer details updated
+2021-11-01 14:03:59,298 - ebanking -INFO - Username and password Provided
+2021-11-01 14:04:00,704 - ebanking -INFO - User has logged
+2021-11-01 14:04:04,997 - ebanking -INFO - Customer Id Provided
+2021-11-01 14:04:06,251 - ebanking -INFO - Customer does not exist!!
+2021-11-01 14:10:51,994 - ebanking -INFO - url is opened
+2021-11-01 14:10:52,163 - ebanking -INFO - username entered
+2021-11-01 14:10:52,282 - ebanking -INFO - password entered
+2021-11-01 14:10:53,702 - ebanking -INFO - clicked on login button
+2021-11-01 14:10:53,715 - ebanking -INFO - home page validated
+2021-11-01 14:11:00,180 - ebanking -INFO - Username and password Provided
+2021-11-01 14:11:01,599 - ebanking -INFO - User has logged
+2021-11-01 14:11:04,549 - ebanking -INFO - Providing Customer Details
+2021-11-01 14:11:20,734 - ebanking -INFO - Customer Id 72526 is Added Successfully
+2021-11-01 14:11:27,894 - ebanking -INFO - Username and password Provided
+2021-11-01 14:11:29,322 - ebanking -INFO - User has logged
+2021-11-01 14:11:32,500 - ebanking -WARN - Customer ID found 
+2021-11-01 14:11:33,653 - ebanking -INFO - New Address Set
+2021-11-01 14:11:33,830 - ebanking -INFO - New City Set
+2021-11-01 14:11:35,014 - ebanking -INFO - New Pin Set
+2021-11-01 14:11:40,315 - ebanking -INFO - Clicked on Submit
+2021-11-01 14:11:56,652 - ebanking -INFO - Username and password Provided
+2021-11-01 14:11:58,150 - ebanking -INFO - User has logged
+2021-11-01 14:12:02,509 - ebanking -INFO - Customer Id Provided
+2021-11-01 14:12:03,268 - ebanking -INFO - Customer does not exist!!
+2021-11-01 23:23:32,803 - ebanking -INFO - url is opened
+2021-11-01 23:23:33,040 - ebanking -INFO - username entered
+2021-11-01 23:23:33,166 - ebanking -INFO - password entered
+2021-11-01 23:23:34,848 - ebanking -INFO - clicked on login button
+2021-11-01 23:23:34,862 - ebanking -INFO - home page validated
+2021-11-01 23:23:42,759 - ebanking -INFO - Username and password Provided
+2021-11-01 23:23:44,495 - ebanking -INFO - User has logged
+2021-11-01 23:23:47,231 - ebanking -INFO - Providing Customer Details
+2021-11-01 23:24:49,092 - ebanking -INFO - Customer Id 341 is Added Successfully
+2021-11-01 23:24:58,234 - ebanking -INFO - Username and password Provided
+2021-11-01 23:25:00,754 - ebanking -INFO - User has logged
+2021-11-01 23:25:04,591 - ebanking -WARN - Customer ID found 
+2021-11-01 23:25:05,746 - ebanking -INFO - New Address Set
+2021-11-01 23:25:05,916 - ebanking -INFO - New City Set
+2021-11-01 23:25:07,102 - ebanking -INFO - New Pin Set
+2021-11-01 23:25:17,349 - ebanking -INFO - Clicked on Submit
+2021-11-01 23:27:35,280 - ebanking -INFO - Username and password Provided
+2021-11-01 23:27:37,173 - ebanking -INFO - User has logged
+2021-11-01 23:27:41,615 - ebanking -INFO - Customer Id Provided
+2021-11-01 23:27:42,569 - ebanking -INFO - Customer does not exist!!
+2021-11-01 23:28:20,018 - ebanking -INFO - url is opened
+2021-11-01 23:28:20,232 - ebanking -INFO - username entered
+2021-11-01 23:28:20,356 - ebanking -INFO - password entered
+2021-11-01 23:28:22,105 - ebanking -INFO - clicked on login button
+2021-11-01 23:28:22,121 - ebanking -INFO - home page validated
+2021-11-01 23:28:28,977 - ebanking -INFO - Username and password Provided
+2021-11-01 23:28:30,667 - ebanking -INFO - User has logged
+2021-11-01 23:28:33,294 - ebanking -INFO - Providing Customer Details
+2021-11-01 23:28:47,638 - ebanking -INFO - Customer Id 37956 is Added Successfully
+2021-11-01 23:28:56,474 - ebanking -INFO - Username and password Provided
+2021-11-01 23:28:58,319 - ebanking -INFO - User has logged
+2021-11-01 23:29:01,519 - ebanking -WARN - Customer ID found 
+2021-11-01 23:29:02,688 - ebanking -INFO - New Address Set
+2021-11-01 23:29:02,866 - ebanking -INFO - New City Set
+2021-11-01 23:29:04,101 - ebanking -INFO - New Pin Set
+2021-11-01 23:29:09,778 - ebanking -INFO - Clicked on Submit
+2021-11-01 23:29:09,831 - ebanking -INFO - customer details updated
+2021-11-01 23:29:17,132 - ebanking -INFO - Username and password Provided
+2021-11-01 23:29:18,735 - ebanking -INFO - User has logged
+2021-11-01 23:29:22,803 - ebanking -INFO - Customer Id Provided
+2021-11-01 23:29:23,480 - ebanking -INFO - Customer deleted Successfully

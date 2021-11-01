@@ -6,8 +6,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.print.PageFormat;
-
 public class AddCustomerPage {
 
     WebDriver ldriver;
@@ -73,6 +71,54 @@ public class AddCustomerPage {
     @FindBy(xpath = "//tbody/tr[14]/td[2]/input[2]")
     @CacheLookup
     WebElement resetButton;
+
+    // Registered customer page
+    @FindBy(xpath = "//tbody/tr[4]/td[1]")
+    @CacheLookup
+    WebElement customerIdAttribute;
+
+    @FindBy(xpath = "//tbody/tr[4]/td[2]")
+    @CacheLookup
+    WebElement customerIdValue;
+
+    @FindBy(xpath = "//tbody/tr[5]/td[1]")
+    @CacheLookup
+    WebElement customerNameAttribute;
+
+    @FindBy(xpath = "//tbody/tr[5]/td[2]")
+    @CacheLookup
+    WebElement customerNameValue;
+
+    @FindBy(xpath = "//tbody/tr[12]/td[1]")
+    @CacheLookup
+    WebElement customerMobAttribute;
+
+    @FindBy(xpath = "//tbody/tr[12]/td[2]")
+    @CacheLookup
+    WebElement customerMobValue;
+
+    @FindBy(xpath = "//tbody/tr[13]/td[1]")
+    @CacheLookup
+    WebElement customerEmailAttribute;
+
+    @FindBy(xpath = "//tbody/tr[13]/td[2]")
+    @CacheLookup
+    WebElement customerEmailValue;
+
+    @FindBy(xpath = "//a[contains(text(),'Continue')]")
+    @CacheLookup
+    WebElement continueButton;
+
+    @FindBy(xpath = "//a[contains(text(),'Home')]")
+    @CacheLookup
+    WebElement homeButton;
+
+    // ***********************************
+
+    public String getCustomerId()
+    {
+        return customerIdValue.getText();
+    }
 
     public void clickOnNewCustomer()
     {

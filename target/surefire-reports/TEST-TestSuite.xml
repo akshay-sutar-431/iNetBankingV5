@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="57.675" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="84.546" tests="5" errors="0" skipped="0" failures="2">
   <properties>
     <property name="idea.version" value="2020.3.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,7 +63,54 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="loginTest" classname="test.cases.TC_LoginTest_001" time="1.717"/>
-  <testcase name="addNewCustomer" classname="test.cases.TC_AddCustomerTest_003" time="20.104"/>
-  <testcase name="editCustomerWithId" classname="test.cases.TC_EditCustomerTest_004" time="9.811"/>
+  <testcase name="loginTest" classname="test.cases.TC_LoginTest_001" time="1.742"/>
+  <testcase name="addNewCustomer" classname="test.cases.TC_AddCustomerTest_003" time="20.821"/>
+  <testcase name="editCustomerWithId" classname="test.cases.TC_EditCustomerTest_004" time="9.096">
+    <failure message="unexpected alert open: {Alert text : No Changes made to Customer records}&#10;  (Session info: chrome=95.0.4638.69): No Changes made to Customer records&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;DESKTOP-ADMB8DB&apos;, ip: &apos;192.168.177.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.11&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\aksha\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: cbf16c25457921603077e1e9d11c09c6&#10;*** Element info: {Using=xpath, value=//p[contains(text(),&apos;Customer details updated Successfully!!!&apos;)]}" type="org.openqa.selenium.UnhandledAlertException">org.openqa.selenium.UnhandledAlertException: 
+unexpected alert open: {Alert text : No Changes made to Customer records}
+  (Session info: chrome=95.0.4638.69): No Changes made to Customer records
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-ADMB8DB', ip: '192.168.177.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\aksha\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cbf16c25457921603077e1e9d11c09c6
+*** Element info: {Using=xpath, value=//p[contains(text(),'Customer details updated Successfully!!!')]}
+	at test.cases.TC_EditCustomerTest_004.editCustomerWithId(TC_EditCustomerTest_004.java:100)
+</failure>
+    <system-out><![CDATA[ INFO [main] (TC_EditCustomerTest_004.java:20)- Username and password Provided
+ INFO [main] (TC_EditCustomerTest_004.java:23)- User has logged
+ WARN [main] (TC_EditCustomerTest_004.java:66)- Customer ID found 
+ INFO [main] (TC_EditCustomerTest_004.java:72)- New Address Set
+ INFO [main] (TC_EditCustomerTest_004.java:74)- New City Set
+ INFO [main] (TC_EditCustomerTest_004.java:77)- New Pin Set
+ INFO [main] (TC_EditCustomerTest_004.java:82)- Clicked on Submit
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 94.0.4606.61 (418b78f5838ed0b1c69bb4e51ea0252171854915-refs/branch-heads/4606@{#1204}) on port 34537
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1635756083.189][WARNING]: This version of ChromeDriver has not been tested with Chrome version 95.
+Nov 01, 2021 2:11:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="validateHomeNavigation" classname="test.cases.TC_EditCustomerTest_004" time="8.891"/>
+  <testcase name="deleteCustomerId" classname="test.cases.TC_DeleteCustomerTest_005" time="4.614">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at test.cases.TC_DeleteCustomerTest_005.deleteCustomerId(TC_DeleteCustomerTest_005.java:55)
+</failure>
+    <system-out><![CDATA[ INFO [main] (TC_DeleteCustomerTest_005.java:21)- Username and password Provided
+ INFO [main] (TC_DeleteCustomerTest_005.java:24)- User has logged
+ INFO [main] (TC_DeleteCustomerTest_005.java:34)- Customer Id Provided
+ INFO [main] (TC_DeleteCustomerTest_005.java:52)- Customer does not exist!!
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 94.0.4606.61 (418b78f5838ed0b1c69bb4e51ea0252171854915-refs/branch-heads/4606@{#1204}) on port 22175
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1635756111.870][WARNING]: This version of ChromeDriver has not been tested with Chrome version 95.
+Nov 01, 2021 2:11:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
 </testsuite>
