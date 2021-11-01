@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import page.objects.EditCustomerPage;
+import page.objects.LoginPage;
 import utilities.ReadConfig;
 
 import java.io.File;
@@ -34,6 +35,7 @@ public class BaseClass {
     public String iepath = rc.getIEPath();
     public String firefoxpath = rc.getFirefoxPath();
     public String cid ;
+    String accountId;
 
     public static WebDriver driver;
 
@@ -86,6 +88,16 @@ public class BaseClass {
         } catch (NoAlertPresentException ne) {
             return false;
         }
+    }
 
+    public void login() throws InterruptedException {
+        LoginPage lp = new LoginPage(driver);
+        lp.setUserName(userName);
+        lp.setPassword(password);
+        logger.info("Username and password Provided");
+        lp.clickSubmit();
+
+        logger.info("User has logged");
+        Thread.sleep(1000);
     }
 }

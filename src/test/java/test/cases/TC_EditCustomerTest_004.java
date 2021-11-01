@@ -30,7 +30,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     @Test
     public void editCustomerWithId() throws IOException, InterruptedException {
 
-        ecp.setCustomerId("341");
+        ecp.setCustomerId("37956");
 
         ecp.clickOnSubmitButton1();
 

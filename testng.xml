@@ -34,7 +34,7 @@
                 </methods>
             </class>
             <class name="test.cases.TC_DeleteCustomerTest_005"/>
-
+            <class name="test.cases.TC_NewAccountTest_006"/>
         </classes>
     </test>
 </suite>

@@ -30,7 +30,7 @@ public class TC_DeleteCustomerTest_005 extends BaseClass{
         DeleteCustomerPage dcp = new DeleteCustomerPage(driver);
         dcp.clickOnDeleteCustomer();
         Thread.sleep(2000);
-        dcp.setCustomerId("341");
+        dcp.setCustomerId("37956");
         logger.info("Customer Id Provided");
         dcp.clickOnSubmitButton();
 

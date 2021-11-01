@@ -784,3 +784,28 @@
 2021-11-01 23:29:18,735 - ebanking -INFO - User has logged
 2021-11-01 23:29:22,803 - ebanking -INFO - Customer Id Provided
 2021-11-01 23:29:23,480 - ebanking -INFO - Customer deleted Successfully
+2021-11-02 00:22:24,257 - ebanking -INFO - url is opened
+2021-11-02 00:22:24,502 - ebanking -INFO - username entered
+2021-11-02 00:22:24,630 - ebanking -INFO - password entered
+2021-11-02 00:22:26,701 - ebanking -INFO - clicked on login button
+2021-11-02 00:22:26,733 - ebanking -INFO - home page validated
+2021-11-02 00:22:34,631 - ebanking -INFO - Username and password Provided
+2021-11-02 00:22:36,410 - ebanking -INFO - User has logged
+2021-11-02 00:22:39,113 - ebanking -INFO - Providing Customer Details
+2021-11-02 00:22:53,397 - ebanking -INFO - Customer Id 68273 is Added Successfully
+2021-11-02 00:23:01,215 - ebanking -INFO - Username and password Provided
+2021-11-02 00:23:03,056 - ebanking -INFO - User has logged
+2021-11-02 00:23:06,244 - ebanking -WARN - Customer ID found 
+2021-11-02 00:23:07,416 - ebanking -INFO - New Address Set
+2021-11-02 00:23:07,611 - ebanking -INFO - New City Set
+2021-11-02 00:23:08,814 - ebanking -INFO - New Pin Set
+2021-11-02 00:23:14,718 - ebanking -INFO - Clicked on Submit
+2021-11-02 00:23:14,775 - ebanking -INFO - customer details updated
+2021-11-02 00:23:23,475 - ebanking -INFO - Username and password Provided
+2021-11-02 00:23:25,242 - ebanking -INFO - User has logged
+2021-11-02 00:23:29,343 - ebanking -INFO - Customer Id Provided
+2021-11-02 00:23:38,297 - ebanking -INFO - Username and password Provided
+2021-11-02 00:23:40,041 - ebanking -INFO - User has logged
+2021-11-02 00:23:41,740 - ebanking -INFO - Clicked on New Account
+2021-11-02 00:23:45,974 - ebanking -INFO - Customer Id and Account info provided
+2021-11-02 00:23:48,007 - ebanking -INFO - Account Generated Successfully!!
