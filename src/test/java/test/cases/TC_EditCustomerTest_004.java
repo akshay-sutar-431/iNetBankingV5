@@ -4,9 +4,9 @@ import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import page.objects.AddCustomerPage;
 import page.objects.EditCustomerPage;
 import page.objects.LoginPage;
+import utilities.XLUtils;
 
 import java.io.IOException;
 
@@ -30,7 +30,9 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     @Test
     public void editCustomerWithId() throws IOException, InterruptedException {
 
-        ecp.setCustomerId("37956");
+        String cid = getCustomerDataFromSheet("update");     // get Customer ID from Sheet
+
+        ecp.setCustomerId(cid);
 
         ecp.clickOnSubmitButton1();
 
@@ -44,16 +46,14 @@ public class TC_EditCustomerTest_004 extends BaseClass {
                 driver.switchTo().defaultContent(); // focus on main window
                 Assert.fail();
 
-            }
-            else if (text.equalsIgnoreCase("You are not authorize to edit this customer!!")) {
+            } else if (text.equalsIgnoreCase("You are not authorize to edit this customer!!")) {
                 logger.warn("Customer ID found but Authorization Required");
                 alert.accept();
                 captureScreenshot(driver, "editCustomer");
                 driver.switchTo().defaultContent(); // focus on main window
                 Assert.assertTrue(true);
 
-            }
-            else {
+            } else {
                 logger.warn("Customer ID Not found ");
                 captureScreenshot(driver, "editCustomer");
                 alert.accept();
@@ -61,8 +61,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
                 Assert.fail();
 
             }
-        }
-        else {
+        } else {
             logger.warn("Customer ID found ");
             //Assert.assertTrue(true);
 
@@ -100,6 +99,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
             String vText = ecp.validateUpdatedDetails();
             if (vText.contains("Customer details updated Successfully")) {
                 logger.info("customer details updated");
+                setCustomerData("updated");
                 Assert.assertTrue(true);
             } else {
                 logger.info("Failed to edit customer");
@@ -136,8 +136,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     }
 
     @Test
-    public void validateHomeNavigation()
-    {
+    public void validateHomeNavigation() {
         ecp.clickOnHome();
     }
 

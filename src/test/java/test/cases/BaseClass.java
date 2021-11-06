@@ -14,9 +14,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import page.objects.AddCustomerPage;
 import page.objects.EditCustomerPage;
 import page.objects.LoginPage;
 import utilities.ReadConfig;
+import utilities.XLUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +36,10 @@ public class BaseClass {
     public String chromepath = rc.getChromePath();
     public String iepath = rc.getIEPath();
     public String firefoxpath = rc.getFirefoxPath();
-    public String cid ;
+    public String cid;
     String accountId;
+    AddCustomerPage acp;
+    String path = System.getProperty("user.dir") + "/src/test/java/test/data/CustomerData.xlsx";
 
     public static WebDriver driver;
 
@@ -99,5 +103,37 @@ public class BaseClass {
 
         logger.info("User has logged");
         Thread.sleep(1000);
+    }
+
+    public String getCustomerDataFromSheet(String action) throws IOException {
+
+        String id = "";
+        String status = "";
+
+        if (action.equals("update")) {
+            String path = System.getProperty("user.dir") + "/src/test/java/test/data/CustomerData.xlsx";
+
+            int rows = XLUtils.getRowCount(path, "Sheet1");
+            int colCount = XLUtils.getCellCount(path, "Sheet1", 0);
+
+            for (int i = 1; i < rows; i++) {
+                status = XLUtils.getCellData(path, "sheet1", i, 5);
+                if (status.contains("added") || status.contains("updated")) {
+                    id = XLUtils.getCellData(path, "sheet1", i, 0);
+                    break;
+                }
+            }
+        } else {
+            logger.info("keyword '" + action + "' not matched");
+        }
+        return id;
+    }
+
+    public void setCustomerData(String Status) throws IOException {
+        cid = acp.getCustomerId();
+        int rows = XLUtils.getRowCount(path, "Sheet1");
+        int colCount = XLUtils.getCellCount(path, "Sheet1", 0);
+
+        XLUtils.setCellData(path, "Sheet1", 0, cid, Status);
     }
 }

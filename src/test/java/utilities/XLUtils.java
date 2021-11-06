@@ -43,10 +43,10 @@ public class XLUtils {
     }
 
 
-    public static String getCellData(String xlfile, String xlsheet, int rownum, int colnum) throws IOException {
-        fi = new FileInputStream(xlfile);
+    public static String getCellData(String file, String sheet, int rownum, int colnum) throws IOException {
+        fi = new FileInputStream(file);
         wb = new XSSFWorkbook(fi);
-        ws = wb.getSheet(xlsheet);
+        ws = wb.getSheet(sheet);
         row = ws.getRow(rownum);
         cell = row.getCell(colnum);
         String data;
@@ -62,14 +62,22 @@ public class XLUtils {
         return data;
     }
 
-    public static void setCellData(String xlfile, String xlsheet, int rownum, int colnum, String data) throws IOException {
-        fi = new FileInputStream(xlfile);
+    public static void setCellData(String file, String sheet, int colnum, String data, String status) throws IOException {
+        fi = new FileInputStream(file);
         wb = new XSSFWorkbook(fi);
-        ws = wb.getSheet(xlsheet);
-        row = ws.getRow(rownum);
+        ws = wb.getSheet(sheet);
+        int lastRow = ws.getLastRowNum();
+        System.out.println("lastRow; " + lastRow);
+        //row = ws.getRow(rownum);
+        //ws.getRow(2).getCell(0).setCellValue(data);
+        row = ws.createRow(++lastRow);
         cell = row.createCell(colnum);
         cell.setCellValue(data);
-        fo = new FileOutputStream(xlfile);
+
+        cell = row.createCell(5);
+        cell.setCellValue(status);
+
+        fo = new FileOutputStream(file);
         wb.write(fo);
         wb.close();
         fi.close();

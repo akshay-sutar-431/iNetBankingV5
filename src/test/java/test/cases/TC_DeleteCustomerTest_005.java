@@ -13,20 +13,10 @@ import page.objects.LoginPage;
 
 public class TC_DeleteCustomerTest_005 extends BaseClass{
 
-    @BeforeClass
-    public void login() throws InterruptedException {
-        LoginPage lp = new LoginPage(driver);
-        lp.setUserName(userName);
-        lp.setPassword(password);
-        logger.info("Username and password Provided");
-        lp.clickSubmit();
-
-        logger.info("User has logged");
-        Thread.sleep(1000);
-    }
-
     @Test
     public void deleteCustomerId() throws InterruptedException {
+        login();
+
         DeleteCustomerPage dcp = new DeleteCustomerPage(driver);
         dcp.clickOnDeleteCustomer();
         Thread.sleep(2000);

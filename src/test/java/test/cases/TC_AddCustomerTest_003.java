@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.objects.AddCustomerPage;
 import page.objects.LoginPage;
+import utilities.XLUtils;
 
 import java.io.IOException;
 
@@ -21,7 +22,7 @@ public class TC_AddCustomerTest_003 extends BaseClass {
         logger.info("User has logged");
         Thread.sleep(1000);
 
-        AddCustomerPage acp = new AddCustomerPage(driver);
+        acp = new AddCustomerPage(driver);
 
         acp.clickOnNewCustomer();
         Thread.sleep(1000);
@@ -54,9 +55,9 @@ public class TC_AddCustomerTest_003 extends BaseClass {
         boolean res = driver.getPageSource().contains("Customer Registered Successfully");
 
         if (res) {
-            cid = acp.getCustomerId();
-            logger.info("Customer Id "+cid+" is Added Successfully");
-            String sc = "addCustomer_"+cid+"";
+            setCustomerData("Customer added");
+            logger.info("Customer Id " + cid + " is Added Successfully");
+            String sc = "addCustomer_" + cid + "";
             captureScreenshot(driver, sc);
             Assert.assertTrue(true);
         } else {
