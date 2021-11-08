@@ -19,19 +19,21 @@
                         <include name="loginData"/>
                     </methods>
                 </class>
-            -->
+
             <class name="test.cases.TC_AddCustomerTest_003"/>
 
-            <!--
-                <class name="test.cases.TC_EditCustomerTest_004">
-                    <methods>
-                        <include name="editCustomerWithId"/>    -->
-            <!--      <include name="editCustomerWithoutId"/>    -->
-            <!--           <include name="validateHomeNavigation"/>
-                   </methods>
-        </class>
-        <class name="test.cases.TC_DeleteCustomerTest_005"/>
-        <class name="test.cases.TC_NewAccountTest_006"/>        -->
+            <class name="test.cases.TC_EditCustomerTest_004">
+                <methods>
+                    <include name="editCustomerWithId"/>
+                          <include name="editCustomerWithoutId"/>
+                               <include name="validateHomeNavigation"/>
+
+                </methods>
+            </class>
+               <class name="test.cases.TC_DeleteCustomerTest_005"/>
+                <class name="test.cases.TC_NewAccountTest_006"/>    -->
+            <class name="test.cases.TC_NewAccountTest_006"/>
+
 
         </classes>
     </test>

@@ -5,6 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.IDynamicGraph;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -52,8 +53,7 @@ public class XLUtils {
         String data;
         try {
             DataFormatter formatter = new DataFormatter();
-            String cellData = formatter.formatCellValue(cell);
-            return cellData;
+            return formatter.formatCellValue(cell);
         } catch (Exception e) {
             data = "";
         }
@@ -62,20 +62,67 @@ public class XLUtils {
         return data;
     }
 
-    public static void setCellData(String file, String sheet, int colnum, String data, String status) throws IOException {
+    public static void setCellData(String file, String sheet, int colnum, String id, String status) throws IOException {
         fi = new FileInputStream(file);
         wb = new XSSFWorkbook(fi);
         ws = wb.getSheet(sheet);
         int lastRow = ws.getLastRowNum();
         System.out.println("lastRow; " + lastRow);
-        //row = ws.getRow(rownum);
         //ws.getRow(2).getCell(0).setCellValue(data);
-        row = ws.createRow(++lastRow);
-        cell = row.createCell(colnum);
-        cell.setCellValue(data);
 
-        cell = row.createCell(5);
-        cell.setCellValue(status);
+        if (status.contains("updated")) {
+            for (int i = 1; i < lastRow; i++) {
+                String cid = XLUtils.getCellData(file, "sheet1", i, 0);
+                if (cid.contains(id)) {
+                    //XLUtils.setCellData(file, "Sheet1", 0, id, Status);
+                    System.out.println("XUTILS: Id Mathced");
+                    //row = ws.getRow(i);
+                /*    cell = ws.getRow(i).getCell(5);
+                    cell.setCellValue(status);
+                    System.out.println("XUTILS: Data written"); */
+
+                    //Retrieve the row and check for null
+                    XSSFRow sheetrow = ws.getRow(i);
+                    if (sheetrow == null) {
+                        sheetrow = ws.createRow(i);
+                    }
+                    //Update the value of cell
+                    cell = sheetrow.getCell(colnum);
+                    if (cell == null) {
+                        cell = sheetrow.createCell(colnum);
+                    }
+                    cell.setCellValue(status);
+                }
+            }
+        } else if (status.contains("added")) {
+
+            row = ws.createRow(++lastRow);
+            cell = row.createCell(colnum);
+            cell.setCellValue(id);
+
+            cell = row.createCell(5);
+            cell.setCellValue(status);
+        } else {
+            for (int i = 1; i < lastRow; i++) {
+                String cid = XLUtils.getCellData(file, "sheet1", i, 0);
+                if (cid.contains(id)) {
+                    //XLUtils.setCellData(file, "Sheet1", 0, id, Status);
+                    System.out.println("XUTILS: Id Mathced");
+                    
+                    //Retrieve the row and check for null
+                    XSSFRow sheetrow = ws.getRow(i);
+                    if (sheetrow == null) {
+                        sheetrow = ws.createRow(i);
+                    }
+                    //Update the value of cell
+                    cell = sheetrow.getCell(colnum);
+                    if (cell == null) {
+                        cell = sheetrow.createCell(colnum);
+                    }
+                    cell.setCellValue(status);
+                }
+            }
+        }
 
         fo = new FileOutputStream(file);
         wb.write(fo);

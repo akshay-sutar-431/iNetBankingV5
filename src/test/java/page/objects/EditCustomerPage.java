@@ -8,74 +8,70 @@ import org.openqa.selenium.support.PageFactory;
 
 public class EditCustomerPage {
     WebDriver driver;
+    @FindBy(xpath = "//a[contains(text(),'Edit Customer')]")
+    @CacheLookup
+    WebElement editCustomer;
+    @FindBy(xpath = "//tbody/tr[6]/td[2]/input[1]")
+    @CacheLookup
+    WebElement customerId;
+    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[1]")
+    @CacheLookup
+    WebElement submitButton1;
+    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[2]")
+    @CacheLookup
+    WebElement resetButton1;
+    @FindBy(xpath = "//a[contains(text(),'Home')]")
+    @CacheLookup
+    WebElement home;
+    @FindBy(xpath = "//a[contains(text(),'Log out')]")
+    @CacheLookup
+    WebElement logout;
+    @FindBy(xpath = "//tbody/tr[7]/td[2]/textarea")
+    @CacheLookup
+    WebElement address;
+    @FindBy(xpath = "//tbody/tr[8]/td[2]/input[1]")
+    @CacheLookup
+    WebElement city;
+    @FindBy(xpath = "//tbody/tr[9]/td[2]/input[1]")
+    @CacheLookup
+    WebElement state;
+    @FindBy(xpath = "//tbody/tr[10]/td[2]/input[1]")
+    @CacheLookup
+    WebElement pin;
+    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[1]")
+    @CacheLookup
+    WebElement mobileNo;
+    @FindBy(xpath = "//tbody/tr[12]/td[2]/input[1]")
+    @CacheLookup
+    WebElement email;
+    @FindBy(xpath = "//tbody/tr[13]/td[2]/input[1]")
+    @CacheLookup
+    WebElement submitButton2;
+    @FindBy(xpath = "//tbody/tr[13]/td[2]/input[2]")
+    @CacheLookup
+    WebElement resetButton2;
+    //p[contains(text(),'Customer details updated Successfully!!!')]
+    @FindBy(xpath = "//p[contains(text(),'Customer details updated Successfully!!!')]")
+    @CacheLookup
+    WebElement updateTextValidate;
+    @FindBy(xpath = "//tbody/tr[4]/td[2]")
+    @CacheLookup
+    WebElement getCustomer;
 
     public EditCustomerPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//a[contains(text(),'Edit Customer')]")
-    @CacheLookup
-    WebElement editCustomer;
-
-    @FindBy(xpath = "//tbody/tr[6]/td[2]/input[1]")
-    @CacheLookup
-    WebElement customerId;
-
-    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[1]")
-    @CacheLookup
-    WebElement submitButton1;
-
-    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[2]")
-    @CacheLookup
-    WebElement resetButton1;
-
-    @FindBy(xpath = "//a[contains(text(),'Home')]")
-    @CacheLookup
-    WebElement home;
-
-    @FindBy(xpath = "//a[contains(text(),'Log out')]")
-    @CacheLookup
-    WebElement logout;
-
-    @FindBy(xpath = "//tbody/tr[7]/td[2]/textarea")
-    @CacheLookup
-    WebElement address;
-
-    @FindBy(xpath = "//tbody/tr[8]/td[2]/input[1]")
-    @CacheLookup
-    WebElement city;
-
-    @FindBy(xpath = "//tbody/tr[9]/td[2]/input[1]")
-    @CacheLookup
-    WebElement state;
-
-    @FindBy(xpath = "//tbody/tr[10]/td[2]/input[1]")
-    @CacheLookup
-    WebElement pin;
-
-    @FindBy(xpath = "//tbody/tr[11]/td[2]/input[1]")
-    @CacheLookup
-    WebElement mobileNo;
-
-    @FindBy(xpath = "//tbody/tr[12]/td[2]/input[1]")
-    @CacheLookup
-    WebElement email;
-
-    @FindBy(xpath = "//tbody/tr[13]/td[2]/input[1]")
-    @CacheLookup
-    WebElement submitButton2;
-
-    @FindBy(xpath = "//tbody/tr[13]/td[2]/input[2]")
-    @CacheLookup
-    WebElement resetButton2;
-
-    //p[contains(text(),'Customer details updated Successfully!!!')]
-    @FindBy(xpath = "//p[contains(text(),'Customer details updated Successfully!!!')]")
-    @CacheLookup
-    WebElement updateTextValidate;
-
     /* Actions */
+
+    public String getCustomerId() {
+        return getCustomer.getText();
+    }
+
+    public void setCustomerId(String cid) {
+        customerId.sendKeys(cid);
+    }
 
     public void clickOnLogout() {
         logout.click();
@@ -87,10 +83,6 @@ public class EditCustomerPage {
 
     public void clickOnEditCustomer() {
         editCustomer.click();
-    }
-
-    public void setCustomerId(String cid) {
-        customerId.sendKeys(cid);
     }
 
     public void clickOnSubmitButton1() {
@@ -106,10 +98,10 @@ public class EditCustomerPage {
         address.sendKeys(address1);
     }
 
-    public String textValidation()
-    {
+    public String textValidation() {
         return updateTextValidate.getText();
     }
+
     public void setCity(String city1) {
         city.clear();
         city.sendKeys(city1);

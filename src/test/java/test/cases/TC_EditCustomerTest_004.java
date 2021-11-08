@@ -30,9 +30,10 @@ public class TC_EditCustomerTest_004 extends BaseClass {
     @Test
     public void editCustomerWithId() throws IOException, InterruptedException {
 
-        String cid = getCustomerDataFromSheet("update");     // get Customer ID from Sheet
-
-        ecp.setCustomerId(cid);
+        String id;
+        //id = getCustomerIdFromSheet("update");     // get Customer ID from Sheet
+        id = "29787";
+        ecp.setCustomerId(id);
 
         ecp.clickOnSubmitButton1();
 
@@ -64,15 +65,14 @@ public class TC_EditCustomerTest_004 extends BaseClass {
         } else {
             logger.warn("Customer ID found ");
             //Assert.assertTrue(true);
-
             // Changes allowed only for Address, city, state, number, pin, email
-            ecp.setAddress("Pune");
+            ecp.setAddress(randomString());
             Thread.sleep(1000);
             logger.info("New Address Set");
-            ecp.setCity("pune");
+            ecp.setCity("Pune");
             logger.info("New City Set");
             Thread.sleep(1000);
-            ecp.setPin("411033");
+            ecp.setPin("411011");
             logger.info("New Pin Set");
             Thread.sleep(1000);
 
@@ -98,8 +98,10 @@ public class TC_EditCustomerTest_004 extends BaseClass {
 
             String vText = ecp.validateUpdatedDetails();
             if (vText.contains("Customer details updated Successfully")) {
-                logger.info("customer details updated");
-                setCustomerData("updated");
+                String id1 = ecp.getCustomerId();
+                //String id1 = ecp.getCustomerId();
+                setCustomerData(id1, "updated");
+                logger.info("customer( " + id1 + " ) details updated");
                 Assert.assertTrue(true);
             } else {
                 logger.info("Failed to edit customer");

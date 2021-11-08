@@ -4,10 +4,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import page.objects.NewAccountPage;
+import utilities.XLUtils;
 
 import java.io.IOException;
 
-public class TC_NewAccountTest_006 extends BaseClass{
+public class TC_NewAccountTest_006 extends BaseClass {
     @Test
     public void addNewAccount() throws InterruptedException, IOException {
         login();
@@ -16,38 +17,38 @@ public class TC_NewAccountTest_006 extends BaseClass{
         newAccountPage.clickOnNewAccount();
         logger.info("Clicked on New Account");
         Thread.sleep(2000);
-
-        newAccountPage.setCustomerId("37956");
+        cid = getCustomerIdFromSheet("Added");
+        logger.info("Customer Id : " + cid);
+        newAccountPage.setCustomerId(cid);
         newAccountPage.selectAccountType("Savings");
         newAccountPage.setInitialDeposit("20000");
         newAccountPage.clickOnSubmitButton();
         logger.info("Customer Id and Account info provided");
         Thread.sleep(2000);
 
-        if(isAlertPresent())
-        {
+        if (isAlertPresent()) {
             Alert alert = driver.switchTo().alert();
             String text = alert.getText();
 
-            if(text.contains("Customer does not exist"))
-            {
+            if (text.contains("Customer does not exist")) {
                 logger.info("Customer Id does not exist!");
+                driver.switchTo().defaultContent();
+                Assert.fail();
+            } else {
+                logger.info(alert.getText());
                 driver.switchTo().defaultContent();
                 Assert.fail();
             }
 
-        }
-        else
-        {
-            if(driver.getPageSource().contains("Account Generated Successfully"))
-            {
+        } else {
+            if (driver.getPageSource().contains("Account Generated Successfully")) {
                 logger.info("Account Generated Successfully!!");
                 accountId = newAccountPage.getAccountId();
-                String sc = "addNewAccount"+accountId+"";
-                captureScreenshot(driver,sc);
+                XLUtils.setCellData(path, "sheet1", 6, cid, accountId);
+                String sc = "addNewAccount" + accountId + "";
+                captureScreenshot(driver, sc);
                 Assert.assertTrue(true);
-            }
-            else{
+            } else {
                 logger.info("Failed to create new Account!");
                 Assert.fail();
             }

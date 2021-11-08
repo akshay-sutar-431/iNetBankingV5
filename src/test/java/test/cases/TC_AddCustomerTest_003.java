@@ -55,7 +55,8 @@ public class TC_AddCustomerTest_003 extends BaseClass {
         boolean res = driver.getPageSource().contains("Customer Registered Successfully");
 
         if (res) {
-            setCustomerData("Customer added");
+            cid = acp.getCustomerId();
+            setCustomerData(cid, "Customer added");
             logger.info("Customer Id " + cid + " is Added Successfully");
             String sc = "addCustomer_" + cid + "";
             captureScreenshot(driver, sc);
@@ -65,13 +66,5 @@ public class TC_AddCustomerTest_003 extends BaseClass {
             logger.info("Customer is Failed to Added");
             Assert.fail();
         }
-    }
-
-    public String randomString() {
-        return RandomStringUtils.randomAlphabetic(6);
-    }
-
-    public String randomStringNum() {
-        return RandomStringUtils.randomAlphanumeric(10);
     }
 }

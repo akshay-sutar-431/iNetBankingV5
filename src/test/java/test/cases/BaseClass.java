@@ -1,6 +1,7 @@
 package test.cases;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.NoAlertPresentException;
@@ -28,24 +29,20 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
+    public static WebDriver driver;
+    public static Logger logger;
+    public String cid;
     ReadConfig rc = new ReadConfig();
-
     public String baseUrl = rc.getApplicationURL();
     public String userName = rc.getUserName();
     public String password = rc.getPassword();
     public String chromepath = rc.getChromePath();
     public String iepath = rc.getIEPath();
     public String firefoxpath = rc.getFirefoxPath();
-    public String cid;
     String accountId;
     AddCustomerPage acp;
     String path = System.getProperty("user.dir") + "/src/test/java/test/data/CustomerData.xlsx";
-
-    public static WebDriver driver;
-
     EditCustomerPage ecp;
-
-    public static Logger logger;
 
     @Parameters("browser")
     @BeforeClass
@@ -105,12 +102,12 @@ public class BaseClass {
         Thread.sleep(1000);
     }
 
-    public String getCustomerDataFromSheet(String action) throws IOException {
+    public String getCustomerIdFromSheet(String action) throws IOException {
 
         String id = "";
         String status = "";
 
-        if (action.equals("update")) {
+        if (action.contains("Added")) {
             String path = System.getProperty("user.dir") + "/src/test/java/test/data/CustomerData.xlsx";
 
             int rows = XLUtils.getRowCount(path, "Sheet1");
@@ -118,7 +115,7 @@ public class BaseClass {
 
             for (int i = 1; i < rows; i++) {
                 status = XLUtils.getCellData(path, "sheet1", i, 5);
-                if (status.contains("added") || status.contains("updated")) {
+                if (status.contains("Added") || status.contains("updated")) {
                     id = XLUtils.getCellData(path, "sheet1", i, 0);
                     break;
                 }
@@ -129,11 +126,34 @@ public class BaseClass {
         return id;
     }
 
-    public void setCustomerData(String Status) throws IOException {
-        cid = acp.getCustomerId();
+    public void setCustomerData(String id, String Status) throws IOException {
+
+        String cid = "";
+        String status = "";
+
+        String path = System.getProperty("user.dir") + "/src/test/java/test/data/CustomerData.xlsx";
+
         int rows = XLUtils.getRowCount(path, "Sheet1");
         int colCount = XLUtils.getCellCount(path, "Sheet1", 0);
 
-        XLUtils.setCellData(path, "Sheet1", 0, cid, Status);
+        for (int i = 1; i < rows; i++) {
+            cid = XLUtils.getCellData(path, "sheet1", i, 0);
+            if (id.contains(cid)) {
+                System.out.println("Id Matched");
+                XLUtils.setCellData(path, "Sheet1", 5, id, Status);
+                break;
+            } else {
+                System.out.println("Id not Matched");
+            }
+        }
+
+    }
+
+    public String randomString() {
+        return RandomStringUtils.randomAlphabetic(6);
+    }
+
+    public String randomStringNum() {
+        return RandomStringUtils.randomAlphanumeric(10);
     }
 }
